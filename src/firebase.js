@@ -2,12 +2,13 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAbvz7YxxqYXCW2wt5Vscxgtm15fnAy-lo",
-  authDomain: "vcard-b7a06.firebaseapp.com",
-  projectId: "vcard-b7a06",
-  storageBucket: "vcard-b7a06.appspot.com",
-  messagingSenderId: "1052151724072",
-  appId: "1:1052151724072:web:2c285486ae79edf5265d1d",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 const app = getApps.length > 0 ? getApp : initializeApp(firebaseConfig);
